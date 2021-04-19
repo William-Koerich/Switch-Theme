@@ -1,5 +1,8 @@
 import {useState, useEffect} from 'react'
 
+/**
+ * Estado que será responsável por busar e gravar no local storage o tema.
+ */
 function usePersistedState(key:string, initialState: any) {
   const [state, setState] = useState(() => {
     const localStorageValue = localStorage.getItem(key)
