@@ -1,13 +1,14 @@
 import 'styled-components'
-declare module 'style-components' {
+
+declare module 'styled-components' {
   export interface DefaultTheme {
-    title: string,
+    title: string
 
     colors: {
       primary: string,
       secundary: string,
       background: string,
-      text: string
+      text: string,
     }
   }
 }
