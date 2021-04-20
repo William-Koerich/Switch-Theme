@@ -1,9 +1,14 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, Dispatch, SetStateAction} from 'react'
+
+type Response<T> = [
+  T,
+  Dispatch<SetStateAction<T>>
+]
 
 /**
  * Estado que será responsável por busar e gravar no local storage o tema.
  */
-function usePersistedState(key:string, initialState: any) {
+function usePersistedState<T>(key:string, initialState: T): Response<T> {
   const [state, setState] = useState(() => {
     const localStorageValue = localStorage.getItem(key)
 
